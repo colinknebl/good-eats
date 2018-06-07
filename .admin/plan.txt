@@ -1,0 +1,12 @@
+
+1. Set up file structure
+2. Write Gruntfile.js
+    2a. grunt-contrib-sass
+    2b. grunt-contrib-concat
+    2c. grunt-contrib-watch
+    2d. grunt-contrib-clean
+    2e. grunt-express
+    2f. grunt-babel
+    2g. babel-core
+    2h. write seperate grunt files in .grunt folder
+

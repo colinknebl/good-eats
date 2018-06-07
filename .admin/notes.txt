@@ -1,0 +1,12 @@
+Client ID
+ghQ8oaCJuPo_Jvq9rTvXfQ
+
+API Key
+FZT0wp1cxArlPNMOP5DC6jxQwnsP0IHTX5rvu23cknJJ5QU8QsfoFsSzZCVpdxnuv-t2bjEkrYusk_qC5s6pacop-FKGLbNTE194dmljTuAEYRhBlOT7cYHlmi8YW3Yx
+
+https://api.yelp.com/v3/businesses/search?term=restaraunts&latitude=43.013689799999995&longitude=-85.6809432
+
+Headers:
+{
+    Authorization: 'Bearer FZT0wp1cxArlPNMOP5DC6jxQwnsP0IHTX5rvu23cknJJ5QU8QsfoFsSzZCVpdxnuv-t2bjEkrYusk_qC5s6pacop-FKGLbNTE194dmljTuAEYRhBlOT7cYHlmi8YW3Yx'
+}

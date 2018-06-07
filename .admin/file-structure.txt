@@ -1,0 +1,183 @@
+good-eats/
+|__ .admin
+|   |__ file_structure.txt
+|   |__ notes.txt
+|   |__ plan.txt
+|__ .git/
+|__ .gitignore
+|__ .grunt
+|   |__ babel.js
+|   |__ clean.js
+|   |__ concat.js
+|   |__ connect.js
+|   |__ sass.js
+|   |__ watch.js
+|__ .tmp/
+|__ Gruntfile.js
+|__ README.md
+|__ package.json
+|__ node_modules/
+|__ server/
+|   |__ server.js
+|__ scripts/
+|   |__ startDevServer.sh   
+|__ src/
+|   |__ favicon.ico
+|   |__ index.html
+|   |__ static/
+|   |   |__ assets/
+|   |   |__ css/
+|   |   |   |__ compiled/
+|   |   |   |   |__ main.css
+|   |   |   |__ lib/
+|   |   |   |   |__ reset.css
+|   |   |   |__ custom/
+|   |   |   |   |__ questions.view.scss
+|   |   |   |   |__ map.view.scss
+|   |   |   |   |__ restaurant-model.view.scss
+|   |   |   |   |__ restaurants-collection.view.scss
+|   |   |   |   |__ restaurant-details.view.scss
+|   |   |__ js/
+|   |   |   |__ main.js
+|   |   |   |__ app.js
+|   |   |   |__ router.js
+|   |   |   |__ custom/
+|   |   |   |   |__ scripts.js
+|   |   |   |__ collections/
+|   |   |   |   |__ Restaurants.collection.js
+|   |   |   |__ models/
+|   |   |   |   |__ Restaurant.model.js
+|   |   |   |__ views/
+|   |   |   |   |__ Questions.view.js
+|   |   |   |   |__ Map.view.js
+|   |   |   |   |__ RestaurantModel.view.js
+|   |   |   |   |__ RestaurantsCollection.view.js
+|   |   |   |   |__ RestaurantDetails.view.js
+|   |   |   |__ lib/
+|   |   |   |   |__ backbone.js
+|   |   |   |   |__ jquery.js
+|   |   |   |   |__ require.js
+|   |   |   |   |__ underscore.js
+|   |   |   |   |__ mustache.js
+|__ build/
+|   |__ favicon.ico
+|   |__ index.html
+|   |__ static/
+|   |   |__ assets/
+|   |   |__ css/
+|   |   |   |__ compiled/
+|   |   |   |   |__ main.css
+|   |   |   |__ lib/
+|   |   |   |   |__ reset.css
+|   |   |__ js/
+|   |   |   |__ main.js
+|   |   |   |__ app.js
+|   |   |   |__ router.js
+|   |   |   |__ compiled/
+|   |   |   |   |__ collections/
+|   |   |   |   |   |__ collections.js
+|   |   |   |   |__ models/
+|   |   |   |   |   |__ models.js
+|   |   |   |   |__ views/
+|   |   |   |   |   |__ views.js
+|   |   |   |__ lib/
+|   |   |   |   |__ backbone.js
+|   |   |   |   |__ jquery.js
+|   |   |   |   |__ require.js
+|   |   |   |   |__ underscore.js
+|   |   |   |   |__ mustache.js
+
+
+
+good-eats/
+|__ .admin
+|   |__ file_structure.txt
+|   |__ plan.txt
+|__ .git/
+|__ .gitignore
+|__ .grunt
+|   |__ babel.js
+|   |__ clean.js
+|   |__ concat.js
+|   |__ connect.js
+|   |__ sass.js
+|   |__ watch.js
+|__ .tmp/
+|__ Gruntfile.js
+|__ README.md
+|__ package.json
+|__ node_modules/
+|__ server/
+|   |__ server.js
+|__ public/
+|   |__ favicon.ico
+|   |__ index.html
+|__ scripts/
+|   |__ startDevServer.sh   
+|__ src/
+|   |__ app/
+|   |   |__ js/ 
+|   |   |   |__ app.collection.js
+|   |   |   |__ app.model.js
+|   |   |   |__ app.test.js
+|   |   |   |__ app.view.js
+|   |   |__ app.html
+|   |   |__ app.scss
+|   |__ components/
+|   |   |__ heaader/
+|   |   |   |__ header.test.js
+|   |   |   |__ header.collection.js
+|   |   |   |__ header.model.js
+|   |   |   |__ header.view.js
+|   |   |   |__ header.scss
+|   |   |   |__ header.html
+|   |   |__ footer/
+|   |   |   |__ footer.test.js
+|   |   |   |__ footer.collection.js
+|   |   |   |__ footer.model.js
+|   |   |   |__ footer.view.js
+|   |   |   |__ footer.scss
+|   |   |   |__ footer.html
+|   |__ lib/
+|   |   |__ backbone.js
+|   |   |__ jquery.js
+|   |   |__ require.js
+|   |   |__ underscore.js
+|__ build/
+|   |__ static/
+|   |   |__ css/
+|   |   |   |__ main.css
+|   |   |   |__ main.css.map
+|   |   |__ js/
+|   |   |   |__ app/
+|   |   |   |   |__ main.js  // require configuration and app initialization
+|   |   |   |   |__ collections/
+|   |   |   |   |__ models/
+|   |   |   |   |   |__ header.model.js
+|   |   |   |   |__ views/
+|   |   |   |   |   |__ app.view.js
+|   |   |   |   |   |__ header.view.js
+|   |   |   |__ lib/
+|   |   |   |   |__ backbone.js
+|   |   |   |   |__ jquery.js
+|   |   |   |   |__ require.js
+|   |   |   |   |__ underscore.js
+|   |   |__ assets/
+|   |__ favicon.ico
+|   |__ index.html
+/* dist folder generated for production env */
+|__ dist/
+|   |__ static/
+|   |   |__ css/
+|   |   |   |__ main.css
+|   |   |__ js/
+|   |   |   |__ app/
+|   |   |   |   |__ main.js
+|   |   |   |__ lib/
+|   |   |   |   |__ backbone.js
+|   |   |   |   |__ jquery.js
+|   |   |   |   |__ require.js
+|   |   |   |   |__ underscore.js
+|   |   |__ assets/
+|   |__ favicon.ico
+|   |__ index.html
