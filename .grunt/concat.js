@@ -13,6 +13,8 @@ module.exports = {
   build_html: {
     files: {
       'build/index.html': ['src/index.html'],
+      'build/www/results.html': ['src/www/results.html'],
+      'build/www/details.html': ['src/www/details.html'],
     }
   },
   build_scss: {

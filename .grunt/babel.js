@@ -21,5 +21,10 @@ module.exports = {
     files: {
       'build/static/js/app.js': 'src/static/js/app.js'
     }
+  },
+  build_router: {
+    files: {
+      'build/static/js/router.js': 'src/static/js/router.js'
+    }
   }
 }

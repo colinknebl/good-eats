@@ -9,4 +9,5 @@
     2f. grunt-babel
     2g. babel-core
     2h. write seperate grunt files in .grunt folder
+3. Set up Backbone Router
 

@@ -3,7 +3,7 @@ module.exports = {
     livereload: true,
   },
   html: {
-    files: ['src/index.html'],
+    files: ['src/index.html', 'src/www/*.html'],
     tasks: ['concat:build_html'],
   },
   js_custom: {
@@ -21,6 +21,10 @@ module.exports = {
   js_main: {
     files: ['src/static/js/main.js'],
     tasks: ['babel:build_main'],
+  },
+  js_router: {
+    files: ['src/static/js/router.js'],
+    tasks: ['babel:build_router'],
   },
   scss: {
     // watches for file changes in the src folder, outputs changes in .tmp folder
