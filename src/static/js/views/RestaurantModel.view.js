@@ -1,13 +1,19 @@
 define('RestaurantModelView', [
   /* 1 */ 'jquery', 
   /* 2 */ 'underscore', 
-  /* 3 */ 'backbone'
+  /* 3 */ 'backbone',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
-  /* 3 */ Backbone
+  /* 3 */ Backbone,
 ){
 
+  const RestaurantModelView = Backbone.View.extend({
+    initialize: function() {
+      console.log('RestaurantModelView initialized');
+    }
+  })
 
+  return RestaurantModelView
 
 })

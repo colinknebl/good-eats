@@ -8,6 +8,12 @@ define('MapView', [
   /* 3 */ Backbone
 ){
 
+  const MapView = Backbone.View.extend({
+    initialized: function() {
+      console.log('MapView initialized');
+    }
+  })
 
+  return MapView
 
 })

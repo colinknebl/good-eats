@@ -32,7 +32,8 @@ define('Router', [
       view.render()
     },
 
-    detailsView: () => {
+    detailsView: (a,b,c,d) => {
+      console.log(a,b,c,d);
       let view = new DetailsView({ el: '#App' })
       view.render()
     }
