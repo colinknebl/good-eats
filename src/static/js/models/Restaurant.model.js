@@ -36,7 +36,7 @@ define('RestaurantModel', [
     },
 
     initialize: function() {
-      console.log('RestaurantModel initialized');
+      // console.log('RestaurantModel initialized');
     }
   })
 

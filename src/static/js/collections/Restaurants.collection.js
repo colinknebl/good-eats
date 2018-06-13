@@ -1,10 +1,11 @@
-define('RestaurantsCollection', [
+define('RestaurantsCollectionColl', [
   /* 1 */ 'jquery', 
   /* 2 */ 'underscore', 
   /* 3 */ 'backbone',
   /* 4 */ 'RestaurantModel',
   /* 5 */ 'Router',
   /* 6 */ 'DetailsView',
+  /* 7 */ 'RestaurantsCollectionView',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
@@ -12,6 +13,7 @@ define('RestaurantsCollection', [
   /* 4 */ RestaurantModel,
   /* 5 */ Router,
   /* 6 */ DetailsView,
+  /* 7 */ RestaurantsCollectionView,
 ){
 
   const RestaurantsCollection = Backbone.Collection.extend({
@@ -19,19 +21,17 @@ define('RestaurantsCollection', [
     model: RestaurantModel,
 
     url: 'http://localhost:8080/api/dummy_restaurant_data/v2',
+
     yelpQueryUrl: '',
 
     initialize: function(options) {
      /**
       * The collection is initialized from Questions.view.js when the questions form is submitted
       */
-      _.bindAll(this, 'fetch')
-      
-      this.yelpQueryUrl = options.yelpQueryUrl
-      this.router = options.router
+      this.yelpQueryUrl = options.state.get('yelpQueryUrl')
     },
 
-    fetch: function() {
+    fetch: function(url) {
       /**
        * This method is called from Questions.view.js
        */
@@ -42,52 +42,12 @@ define('RestaurantsCollection', [
         },
       }
 
-      console.table({
-        apiUrl: this.url,
-        yelpQueryUrl: this.yelpQueryUrl
-      })
+      // console.table({
+      //   apiUrl: this.url,
+      //   yelpQueryUrl: this.yelpQueryUrl
+      // })
 
-      fetch(this.url, options)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data);
-          let detailsView = new DetailsView( {el: '#App', collection: data} )
-          $('#details-view__section').append(detailsView.render().$el)
-
-          // detailsView.render().$el
-
-          // data.map(rest => {
-          //   let restaurantModel = new RestaurantModel({
-          //     id: rest.id,
-          //     name: rest.name,
-          //     image_url: rest.image_url,
-          //     is_closed: rest.is_closed,
-          //     url: rest.url,
-          //     rating: rest.rating,
-          //     coordinates: {
-          //       latitude: rest.coordinates.latitude,
-          //       longitude: rest.coordinates.longitude
-          //     },
-          //     location: {
-          //       address1: rest.location.address1,
-          //       address2: rest.location.address2,
-          //       address3: rest.location.address3,
-          //       city: rest.location.city,
-          //       zip_code: rest.location.zip_code,
-          //       country: rest.location.country,
-          //       state: rest.location.state,
-          //       display_address: rest.location.display_address
-          //     },
-          //     phone: rest.phone,
-          //     display_phone: rest.display_phone,
-          //     distance: rest.distance
-          //   })
-          // })
-        })
-        .then(() => {
-          this.router.navigate('/details', { trigger: false })
-        })
-        .catch(err => console.error(err))
+      return fetch(this.url, options)
     }
   })
 

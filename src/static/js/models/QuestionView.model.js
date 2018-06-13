@@ -14,7 +14,7 @@ define('QuestionViewModel', [
 
   const QuestionViewModel = Backbone.Model.extend({
     defaults: {
-      foo: 'bar',
+      modelName: 'QuestionsViewModel',
       term: null,
       radius: null,
       price: null,
@@ -22,11 +22,18 @@ define('QuestionViewModel', [
       longitude: null,
     },
 
-    initialize: function() {
-      // Get location of user
+    initialize: function(options) {
+      this.AppData = options.AppData
+
+      /**
+       * Get GeoLocation of user
+       */
       window.navigator.geolocation.getCurrentPosition((position) => {
+        console.log('location retrieved');
         this.set('latitude', position.coords.latitude)
         this.set('longitude', position.coords.longitude)
+        this.AppData.state.set('latitude', position.coords.latitude) 
+        this.AppData.state.set('longitude', position.coords.longitude) 
       })
     },
   })

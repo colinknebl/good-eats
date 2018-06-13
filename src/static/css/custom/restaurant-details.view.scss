@@ -2,6 +2,79 @@
     Start Restaurant Details View
 ============================================================== */
 
+#details-view__section {
+  border: 2px solid red;
+  box-sizing: border-box;
+  width: 80%;
+  margin: auto auto 1rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#details-view__map {
+  // box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  min-height: 500px;
+}
+
+.details-view__ul {
+  border: 2px solid black;
+  box-sizing: border-box;
+  background: whitesmoke;
+  max-height: 500px;
+  width: 45%;
+  // max-width: 400px;
+  padding: 1rem;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+  &::-webkit-scrollbar:vertical {
+      width: 11px;
+  }
+  &::-webkit-scrollbar:horizontal {
+      height: 11px;
+  }
+  &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white; /* should match background, can't be transparent */
+      background-color: rgba(0, 0, 0, .5);
+  }
+  &::-webkit-scrollbar-track { 
+      background-color: #fff; 
+      border-radius: 8px; 
+  } 
+  
+}
+
+.details-view__li {
+  border-bottom: 1px solid darkgrey;
+  margin-bottom: 1rem;
+  padding: 1rem 0px;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.restaurant-details__elem {
+  display: block;
+}
+
+.restaurant-details__btn {
+  border: none;
+  outline: none;
+  background: royalblue;
+  color: white;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  margin-top: .5rem;
+  cursor: pointer;
+  transition: background .25s;
+  &:hover {
+    background: lightblue;
+  }
+}
 
 
 /* ============================================================== 

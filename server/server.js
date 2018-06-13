@@ -115,6 +115,7 @@ app.get('/api/dummy_restaurant_data/v2', (req, res) => {
   }
   let data = request()
   request().then(data => {
+    console.log(`Number of restaurants returned: ${data.businesses.length}`);
     res.json(data.businesses)
   })
 

@@ -9,61 +9,17 @@
   <!-- CSS -->
   <link rel="stylesheet" href="static/css/lib/reset.css">
   <link rel="stylesheet" href="static/css/compiled/main.css">
+
+  <!-- MapQuest Files -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css"/>
   
 </head>
 <body>
   <header class="page-header">
     <h1>Good Eats.</h1>
   </header>
-  <main id="App">
-    <!-- <script id="questions-template" type="text/html"> -->
-      <form class="questions-form">
-          <ul class="questions-list">
-            <li class="questions-li">
-              <span class="questions-li__span">What are you in the mood for?</span>
-              <select id="questions-form__term" class="questions-li__input" name="term">
-                <option value="american">American</option>
-                <option value="breweries">Breweries</option>
-                <option value="casual">Casual</option>
-                <option value="chinese">Chinese</option>
-                <option value="italian">Italian</option>
-                <option value="mediterranean">Mediterranean</option>                
-                <option value="polish">Polish</option>
-              </select>
-            </li>
-            <li class="questions-li">
-              <span class="questions-li__span">Within how many miles should the restaraunt be?</span>
-              <input id="questions-form__radius" class="questions-li__input" type="number" step="1" min="1" max="25">
-            </li>
-            <li class="questions-li">
-              <span class="questions-li__span">What is your budget?</span>
-              <select id="questions-form__price" class="questions-li__input" name="price">
-                <option value="any">Who cares, I'm rich</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-                <option value="4">$$$$</option>
-              </select>
-            </li>
-            <div class="questions-li__submit-btn-container">
-                <input class="questions-li__submit-btn" type="submit" value="Find Me Food!">
-            </div>
-            <div class="form-error-messages">
-              <p class="form-error-messages__01">Radius required.</p>
-            </div>
-          </ul>
-        </form>
-    <!-- </script> -->
-
-    <section id="details-view__section">
-      <script id="details-view__template" type="text/html">
-        <h1>Details View</h1>
-        <ul id="details-view__ul">
-          <li>{{ id }}</li>
-        </ul>
-      </script>
-    </section>
-  </main>
+  <main id="App"></main>
   <script src="static/js/lib/require.js" data-main="static/js/main"></script>
 </body>
 </html>

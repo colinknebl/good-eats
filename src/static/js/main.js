@@ -10,7 +10,7 @@ requirejs.config({
     Initialize: 'app',
     Router: 'router',
     // Collections
-    RestaurantsCollection: 'custom/scripts',
+    RestaurantsCollectionColl: 'custom/scripts',
     // Models
     RestaurantModel: 'custom/scripts',
     QuestionViewModel: 'custom/scripts',
@@ -21,7 +21,8 @@ requirejs.config({
     DetailsView: 'custom/scripts',
     RestaurantDetailsView: 'custom/scripts',
     RestaurantModelView: 'custom/scripts',
-    RestaurantCollectionView: 'custom/scripts',
+    RestaurantsCollectionView: 'custom/scripts',
+    ResultsRestaurantView: 'custom/scripts',
   }
 });
 
