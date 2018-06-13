@@ -22,14 +22,7 @@ define('RestaurantsCollectionView', [
 
     initialize: function(options) {
       this.AppData = options.AppData
-
-      // this.collection.on('add', this.add, this)
     },
-
-    // add: function(a,b,c) {
-    //   console.log('adding...');
-    //   console.log(a,b,c);
-    // },
 
     render: function() {
       let self = this

@@ -23,6 +23,24 @@ define('QuestionsView', [
     initialize: function(options) {
       _.bindAll(this, 'onFormSubmit', 'render')
       this.AppData = options.AppData
+
+      this.AppData.eventBus.on('locationResolved', this.locationResolved, this)
+
+      this.render()
+
+      // Clear out any existing cached collection
+      if (this.AppData.state.collection) { this.AppData.state.collection = null }
+      // Check to see if any coordinates have been cached
+      if (this.AppData.state.get('hasCoords')) { this.enableBtn() }
+    },
+
+    locationResolved: function() {
+      this.enableBtn()
+    },
+
+    enableBtn: function() {
+      $('.questions-li__submit-btn').attr('disabled', false)
+      $('.questions-view__location-load-container').toggleClass('hide')
     },
 
     render: function() {
@@ -44,24 +62,29 @@ define('QuestionsView', [
                 </select>
               </li>
               <li class="questions-li">
-                <span class="questions-li__span">Within how many miles should the restaraunt be?</span>
-                <input id="questions-form__radius" class="questions-li__input" type="number" step="1" min="1" max="25">
+                <span class="questions-li__span">How far are you willing to travel?</span>
+                <input id="questions-form__radius" class="questions-li__input" type="number" step="1" min="1" max="25" placeholder="Max 25 miles">
               </li>
               <li class="questions-li">
                 <span class="questions-li__span">What is your budget?</span>
                 <select id="questions-form__price" class="questions-li__input" name="price">
-                  <option value="any">Who cares, I'm rich</option>
                   <option value="1">$</option>
                   <option value="2">$$</option>
                   <option value="3">$$$</option>
                   <option value="4">$$$$</option>
+                  <option value="any">Who cares, I'm rich</option>
                 </select>
               </li>
               <div class="questions-li__submit-btn-container">
-                  <input class="questions-li__submit-btn" type="submit" value="Find Me Food!">
+                  <input class="questions-li__submit-btn" type="submit" value="Find Me Food!" disabled="true">
               </div>
-              <div class="form-error-messages">
-                <p class="form-error-messages__01">Radius required.</p>
+              <div class="questions-view__location-load-container">
+                <div class="questions-view__location-load-animation">
+                  <span class="location-load-animation__elem elem-1"></span>
+                  <span class="location-load-animation__elem elem-2"></span>
+                  <span class="location-load-animation__elem elem-3"></span>
+                </div>
+                <p>Getting your location...</p>
               </div>
             </ul>
           </form>
@@ -109,8 +132,8 @@ define('QuestionsView', [
        */
 
       let url = 'https://api.yelp.com/v3/businesses/search?'
-      let lat = this.model.get('latitude')
-      let long = this.model.get('longitude')
+      let lat = this.AppData.state.get('latitude')
+      let long = this.AppData.state.get('longitude')
       let addAmpersand = false
 
       if (data.term) {

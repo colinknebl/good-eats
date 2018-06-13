@@ -34,7 +34,7 @@ define('Initialize',
       }
     })
     let state = new AppState()
-
+    
     // initialize router
     const Router = Backbone.Router.extend({
 
@@ -57,12 +57,11 @@ define('Initialize',
       },
   
       questionsView: function() {
-        let view = new QuestionsView({ el: '#App', model: this.questionViewModel, AppData: this.AppData})
-        view.render()
+        let view = new QuestionsView({ el: '#App', AppData: this.AppData})
+        // self rendering
       },
   
       restaurantView: function(id) {
-        console.log('id', id);
         // let view = new ResultsView({ el: '#App', AppData: this.AppData})
         // view.render()
       },

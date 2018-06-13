@@ -13,27 +13,21 @@ define('QuestionViewModel', [
 ){
 
   const QuestionViewModel = Backbone.Model.extend({
-    defaults: {
-      modelName: 'QuestionsViewModel',
-      term: null,
-      radius: null,
-      price: null,
-      latitude: null,
-      longitude: null,
-    },
 
     initialize: function(options) {
       this.AppData = options.AppData
-
+      
       /**
        * Get GeoLocation of user
        */
       window.navigator.geolocation.getCurrentPosition((position) => {
-        console.log('location retrieved');
-        this.set('latitude', position.coords.latitude)
-        this.set('longitude', position.coords.longitude)
         this.AppData.state.set('latitude', position.coords.latitude) 
-        this.AppData.state.set('longitude', position.coords.longitude) 
+        this.AppData.state.set('longitude', position.coords.longitude)
+
+        this.AppData.state.set('hasCoords', true)
+
+        // trigger custom event when the coordinates are resolved
+        this.AppData.eventBus.trigger('locationResolved')
       })
     },
   })

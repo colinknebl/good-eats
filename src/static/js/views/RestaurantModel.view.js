@@ -18,7 +18,7 @@ define('RestaurantModelView', [
     className: 'details-view__li',
 
     events: {
-      'click': 'onClick'
+      'click .restaurant-details__btn': 'onClick'
     },
 
     initialize: function(options) {

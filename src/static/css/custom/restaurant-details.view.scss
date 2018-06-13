@@ -3,30 +3,33 @@
 ============================================================== */
 
 #details-view__section {
-  border: 2px solid red;
+  border: 2px solid black;
+  background: lightgrey;
+  box-shadow: 0px 60px 60px -50px #474747;
   box-sizing: border-box;
   width: 80%;
   margin: auto auto 1rem auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #details-view__map {
   // box-sizing: border-box;
-  width: 50%;
+  width: auto;
   height: 100%;
   min-height: 500px;
+  justify-self: stretch;
 }
 
 .details-view__ul {
-  border: 2px solid black;
+  border-left: 2px solid black;
   box-sizing: border-box;
   background: whitesmoke;
   max-height: 500px;
-  width: 45%;
   // max-width: 400px;
-  padding: 1rem;
+  padding: 1rem 2rem;
   overflow-y: scroll;
+  justify-self: stretch;
   &::-webkit-scrollbar {
       -webkit-appearance: none;
   }

@@ -23,7 +23,6 @@ define('DetailsView', [
   const DetailsView = Backbone.View.extend({
 
     initialize: function(options) {
-      console.log('details!');
       this.AppData = options.AppData
       this.render()
     },
@@ -37,11 +36,10 @@ define('DetailsView', [
           <h4>{{ name }}</h4>
           <span class="restaurant-details__elem">Price: {{ price }}</span>
           <span class="restaurant-details__elem">Rating: {{ rating }}</span>
-          <span class="restaurant-details__elem">Distance from your location: {{ distance }}</span>
+          <span class="restaurant-details__elem">Address: {{ location.address1 }}</span>
           <button class="restaurant-details__btn">More Info</button>
         </script>
       </section>
-    
     
       `)
 

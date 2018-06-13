@@ -1,10 +1,14 @@
+/* ============================================================== 
+    Start Results View
+============================================================== */
 
 .results-view__section {
   border: 2px solid black;
+  background: whitesmoke;
+  box-shadow: 0px 60px 60px -50px #474747;
   width: 60%;
-  margin: auto;
+  margin: auto auto 1rem auto;
   display: grid;
-  grid-gap: 1em;
   grid-template-areas:
     "img details"
     "btn-section btn-section"
@@ -12,19 +16,49 @@
 }
 .results-view__img {
   border: 2px solid black;
+  border-radius: 50%;
   max-height: 450px;
   max-width: 450px;
-  border-radius: 50%;
+  margin: 1rem;
+
   grid-area: img;
+  justify-self: center;
 }
 .results-view__details {
-  border: 2px solid red;
-  display: inline-block;
+  border-left: 2px solid black;
+  padding: 2rem;
   grid-area: details;
+  // display: inline-block;
+  display: grid;
+  grid-template-areas:
+    "head head"
+    "price rating"
+    "phone phone"
+    "address address"
+  ;
+}
+.details-elem__header {
+  grid-area: head;
+}
+.details-elem__price {
+  grid-area: price;
+}
+.details-elem__rating {
+  grid-area: rating;
+  justify-self: right;
+}
+.details-elem__display-phone {
+  grid-area: phone;
+}
+.details-elem__address {
+  grid-area: address;
+}
+.results-view__address-elem {
+  display: block;
 }
 
 .results-view__btn-section {
-  border: 2px solid blue;
+  border-top: 2px solid black;
   display: flex;
   justify-content: space-between;
   padding: 1em;
@@ -40,9 +74,12 @@
   width: 100px;
 }
 .results-view__details-elem {
-  border: 1px solid purple;
   display: inline-block;
 }
 .results-view__details-elem--block {
   display: block;
 }
+
+/* ============================================================== 
+    End Results View
+============================================================== */
