@@ -9,9 +9,12 @@ define('MapView', [
 ){
 
   const MapView = Backbone.View.extend({
+
     initialize: function(options) {
       this.AppData = options.AppData
+    },
 
+    render: function() {
       let restaurantsArray = this.AppData.state.collection.reduce((accumulatedArray, restaurantModel) => {
         let displayAddress = restaurantModel.attributes.location.display_address.reduce((accumulator, current) => {
           return accumulator + ' ' + current
@@ -38,7 +41,6 @@ define('MapView', [
           geocodingResponse: response
         }));
       }
-      
     }
   })
 

@@ -14,7 +14,7 @@ module.exports = {
   },
   build_main: {
     files: {
-      'build/static/js/main.js': 'src/static/js/main.js',
+      'build/static/js/main.js': 'src/static/js/main.dev.js',
     }
   },
   build_app: {
@@ -22,9 +22,16 @@ module.exports = {
       'build/static/js/app.js': 'src/static/js/app.js'
     }
   },
-  build_router: {
+  dist: {
+    options: {
+      sourceMaps: false,
+      minified: true,
+      comments: false,
+      babelrc: false,
+      presets: ['env']
+    },
     files: {
-      'build/static/js/router.js': 'src/static/js/router.js'
+      'dist/client/main.min.js': '.tmp/src.js',
     }
   }
 }

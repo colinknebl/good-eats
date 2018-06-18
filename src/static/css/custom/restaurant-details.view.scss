@@ -2,34 +2,20 @@
     Start Restaurant Details View
 ============================================================== */
 
-#details-view__section {
+.details-view__section {
   border: 2px solid black;
   background: lightgrey;
   box-shadow: 0px 60px 60px -50px #474747;
   box-sizing: border-box;
-  width: 80%;
-  margin: auto auto 1rem auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  margin: auto auto 2rem auto;
 }
+.details-view__map {
 
-#details-view__map {
-  // box-sizing: border-box;
-  width: auto;
-  height: 100%;
-  min-height: 500px;
-  justify-self: stretch;
 }
-
 .details-view__ul {
-  border-left: 2px solid black;
-  box-sizing: border-box;
   background: whitesmoke;
-  max-height: 500px;
-  // max-width: 400px;
-  padding: 1rem 2rem;
   overflow-y: scroll;
-  justify-self: stretch;
+  max-height: 500px;
   &::-webkit-scrollbar {
       -webkit-appearance: none;
   }
@@ -50,35 +36,75 @@
   } 
   
 }
-
 .details-view__li {
   border-bottom: 1px solid darkgrey;
   margin-bottom: 1rem;
-  padding: 1rem 0px;
   &:last-child {
     border-bottom: none;
   }
 }
-
 .restaurant-details__elem {
-  display: block;
+  
 }
-
 .restaurant-details__btn {
   border: none;
-  outline: none;
-  background: royalblue;
-  color: white;
-  font-size: 1rem;
   padding: .5rem 1rem;
   margin-top: .5rem;
-  cursor: pointer;
-  transition: background .25s;
-  &:hover {
-    background: lightblue;
+}
+
+@media screen and (max-width: 1250px) {
+  .details-view__section {
+    width: 90%;
+    min-height: 800px;
+  }
+  .details-view__map {
+    border-bottom: 2px solid black;
+    height: 50%;
+    min-height: 200px;
+    max-height: 50vh;
+  }
+  .details-view__ul {
+    padding: 1rem;
+  }
+  .restaurant-details__elem {
+
+  }
+  .restaurant-details__btn {
+    display: block;
+    margin: .5rem auto 1rem 0;
   }
 }
 
+@media screen and (min-width: 1251px) {
+  .details-view__section {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .details-view__map {
+    width: auto;
+    height: 100%;
+    min-height: 500px;
+    justify-self: stretch;
+  }
+  .details-view__ul {
+    border-left: 2px solid black;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    justify-self: stretch;
+  }
+  .details-view__li {
+    border-bottom: 1px solid darkgrey;
+    margin-bottom: 1rem;
+    padding: 1rem 0px;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .restaurant-details__elem {
+    display: block;
+  }
+}
 
 /* ============================================================== 
     End Restaurant Details View

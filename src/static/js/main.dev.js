@@ -12,8 +12,11 @@ requirejs.config({
     // Collections
     RestaurantsCollectionColl: 'custom/scripts',
     // Models
+    AnimationModel: 'custom/scripts',
+    SubmitButtonModel: 'custom/scripts',
     RestaurantModel: 'custom/scripts',
     QuestionViewModel: 'custom/scripts',
+    NoteModel: 'custom/scripts',
     // Views
     MapView: 'custom/scripts',
     QuestionsView: 'custom/scripts',
@@ -23,6 +26,9 @@ requirejs.config({
     RestaurantModelView: 'custom/scripts',
     RestaurantsCollectionView: 'custom/scripts',
     ResultsRestaurantView: 'custom/scripts',
+    SubmitButtonView: 'custom/scripts',
+    AnimationView: 'custom/scripts',
+    NoteGettingLocationView: 'custom/scripts'
   }
 });
 

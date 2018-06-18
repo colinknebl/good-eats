@@ -3,24 +3,18 @@ define('RestaurantsCollectionColl', [
   /* 2 */ 'underscore', 
   /* 3 */ 'backbone',
   /* 4 */ 'RestaurantModel',
-  /* 5 */ 'Router',
-  /* 6 */ 'DetailsView',
-  /* 7 */ 'RestaurantsCollectionView',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
   /* 3 */ Backbone,
   /* 4 */ RestaurantModel,
-  /* 5 */ Router,
-  /* 6 */ DetailsView,
-  /* 7 */ RestaurantsCollectionView,
 ){
 
   const RestaurantsCollection = Backbone.Collection.extend({
 
     model: RestaurantModel,
 
-    url: 'http://localhost:8080/api/dummy_restaurant_data/v2',
+    url: 'http://localhost:8080/api/get_restaurant_collection/',
 
     yelpQueryUrl: '',
 
@@ -28,24 +22,20 @@ define('RestaurantsCollectionColl', [
      /**
       * The collection is initialized from Questions.view.js when the questions form is submitted
       */
-      this.yelpQueryUrl = options.state.get('yelpQueryUrl')
+      this.AppData = options.AppData
+      this.yelpQueryUrl = this.AppData.state.get('yelpQueryUrl')
     },
 
-    fetch: function(url) {
+    fetch: function(data) {
       /**
        * This method is called from Questions.view.js
        */
-
       let options = {
         headers: {
-          url: this.yelpQueryUrl
+          url: this.yelpQueryUrl,
+          'min-rating': data.minRating
         },
       }
-
-      // console.table({
-      //   apiUrl: this.url,
-      //   yelpQueryUrl: this.yelpQueryUrl
-      // })
 
       return fetch(this.url, options)
     }

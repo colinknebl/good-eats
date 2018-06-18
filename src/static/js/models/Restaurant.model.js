@@ -35,9 +35,7 @@ define('RestaurantModel', [
     "distance": null
     },
 
-    initialize: function() {
-      // console.log('RestaurantModel initialized');
-    }
+    initialize: function() {}
   })
 
   return RestaurantModel

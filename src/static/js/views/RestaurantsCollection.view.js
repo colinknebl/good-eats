@@ -16,10 +16,6 @@ define('RestaurantsCollectionView', [
 
   const RestaurantsCollectionView = Backbone.View.extend({
 
-    tagName: 'ul',
-    id: 'details-view__ul',
-    className: 'details-view__ul',
-
     initialize: function(options) {
       this.AppData = options.AppData
     },
@@ -28,8 +24,10 @@ define('RestaurantsCollectionView', [
       let self = this
       this.collection.map(restaurant => {
         let restaurantModelView = new RestaurantModelView({ model: restaurant, AppData: this.AppData })
+        self.AppData.appViewManager.registerSubView(restaurantModelView)
         self.$el.append(restaurantModelView.render().$el)
       })
+
       return this
     }
   })

@@ -8,6 +8,8 @@ module.exports = function(grunt) {
     connect: require('./.grunt/connect'),
     sass: require('./.grunt/sass'),
     watch: require('./.grunt/watch'),
+    processhtml: require('./.grunt/processHtml'),
+    copy: require('./.grunt/copy')
   })
 
   // Packages
@@ -17,12 +19,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-sass')
   grunt.loadNpmTasks('grunt-contrib-connect')
-  // grunt.loadNpmTasks('grunt-contrib-jshint') --> not installed
+  grunt.loadNpmTasks('grunt-contrib-copy')
+  grunt.loadNpmTasks('grunt-processhtml')
 
   // Registered Tasks
-  // grunt.registerTask('default', ['concat', 'babel:dist'])
   grunt.registerTask('build', ['concat', 'babel', 'sass:build', 'connect', 'watch'])
-  grunt.registerTask('dist', ['concat', 'babel:build', 'sass:build'])
+  // grunt.registerTask('dist', ['concat:dist', 'processhtml:dist', 'sass:dist'])
+  grunt.registerTask('dist', ['processhtml:dist', 'copy:dist', 'concat:dist', 'babel:dist', 'sass:dist'])
 
 }
 

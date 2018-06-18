@@ -3,13 +3,11 @@ define('RestaurantModelView', [
   /* 2 */ 'underscore', 
   /* 3 */ 'backbone',
   /* 4 */ 'mustache',
-  /* 5 */ 'ResultsView',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
   /* 3 */ Backbone,
   /* 4 */ Mustache,
-  /* 5 */ ResultsView,
 ){
 
   const RestaurantModelView = Backbone.View.extend({
@@ -38,10 +36,9 @@ define('RestaurantModelView', [
     },
 
     onClick: function() {
-      let view = new ResultsView({ el: $('#App'), model: this.model, AppData: this.AppData })
+      this.AppData.state.resultsModel = this.model
       this.AppData.router.navigate('/restaurant/' + this.model.get('id'), { trigger: true })
-      view.render()
-    }
+    },
   })
 
   return RestaurantModelView

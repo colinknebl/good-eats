@@ -3,13 +3,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="./favicon.ico">
 
   <title>Good Eats</title>
 
   <!-- CSS -->
+  <!-- build:css ./lib/css/reset.min.css --> 
   <link rel="stylesheet" href="static/css/lib/reset.css">
+  <!-- /build -->  
+  <!-- build:css ./main.min.css --> 
   <link rel="stylesheet" href="static/css/compiled/main.css">
-
+  <!-- /build -->
+  
   <!-- MapQuest Files -->
   <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.js"></script>
   <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.1/mapquest.css"/>
@@ -20,6 +25,13 @@
     <h1>Good Eats.</h1>
   </header>
   <main id="App"></main>
-  <script src="static/js/lib/require.js" data-main="static/js/main"></script>
+  
+  <!-- build:js ./lib/js/require.js -->
+  <script src="static/js/lib/require.js"></script>
+  <!-- /build -->
+  <!-- build:js ./main.min.js -->
+  <script src="static/js/main.js"></script>
+  <!-- /build -->
+
 </body>
 </html>

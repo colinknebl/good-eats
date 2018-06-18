@@ -3,14 +3,16 @@
 ============================================================== */
 
 :root {
-  --main-bg-color: #CCF0C3;
+  --main-bg-color: white;
+  --orange: #F8981D;
+  --blue: #6EBFC3;
+  --gray: #7E8083;
   font: {
     size: 16px;
     family: 'Helvetica', 'Arial', sans-serif;
   }
 }
 body {
-  background: var(--main-bg-color);
   box-sizing: border-box;
   line-height: 1.5;
 }
@@ -25,6 +27,23 @@ h6 { font-size: 1rem; }
   text-align: center;
   padding: 2rem;
   text-decoration: underline;
+  color: var(--orange);
+}
+.btn-general {
+  background: var(--blue);
+  color: black;
+  outline: none;
+  font-size: 1rem;
+  transition: background .25s, box-shadow .25s;
+  &:hover {
+    cursor: pointer;
+    background: var(--orange);
+    color: white;
+    box-shadow: 0px 10px 25px -10px #474747;
+  }
+  &:active {
+      box-shadow: 0px 0px 20px 0px black inset;
+  }
 }
 
 

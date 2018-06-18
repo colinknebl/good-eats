@@ -10,11 +10,13 @@ module.exports = {
   },
   dist: {
     options: {
-      style: 'compact',
+      style: 'compressed',
       cacheLocation: '.tmp/.sass-cache',
+      sourcemap: 'none',
     },
     files: {
-      'dist/static/css/compiled/main.css': 'build/static/css/compiled/main.css',
+      'dist/client/main.min.css': '.tmp/main.scss',
+      'dist/client/lib/css/reset.min.css': 'src/static/css/lib/reset.css'
     }
   }
 }

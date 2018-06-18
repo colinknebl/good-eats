@@ -13,11 +13,15 @@ define('ResultsRestaurantView', [
   const ResultsRestaurantView = Backbone.View.extend({
 
     initialize: function(options) {
-      console.log('results restaurant view options:', options);
+      this.AppData = options.AppData
+      this.template = options.template
     },
 
     render: function() {
-      
+      let html = Mustache.render(this.template, this.model.toJSON())
+      $('.results-view__img').attr('src', this.model.get('image_url'))
+      $('.results-view__details').html(html)
+
       return this
     }
   })

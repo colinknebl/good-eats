@@ -6,78 +6,114 @@
   border: 2px solid black;
   background: whitesmoke;
   box-shadow: 0px 60px 60px -50px #474747;
-  width: 60%;
-  margin: auto auto 1rem auto;
-  display: grid;
-  grid-template-areas:
-    "img details"
-    "btn-section btn-section"
-  ;
 }
 .results-view__img {
   border: 2px solid black;
-  border-radius: 50%;
-  max-height: 450px;
-  max-width: 450px;
-  margin: 1rem;
-
-  grid-area: img;
-  justify-self: center;
-}
-.results-view__details {
-  border-left: 2px solid black;
-  padding: 2rem;
-  grid-area: details;
-  // display: inline-block;
-  display: grid;
-  grid-template-areas:
-    "head head"
-    "price rating"
-    "phone phone"
-    "address address"
-  ;
-}
-.details-elem__header {
-  grid-area: head;
-}
-.details-elem__price {
-  grid-area: price;
-}
-.details-elem__rating {
-  grid-area: rating;
-  justify-self: right;
-}
-.details-elem__display-phone {
-  grid-area: phone;
-}
-.details-elem__address {
-  grid-area: address;
-}
-.results-view__address-elem {
-  display: block;
-}
-
-.results-view__btn-section {
-  border-top: 2px solid black;
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  grid-area: btn-section;
+  box-shadow: 0px 0px 15px 5px darkgrey;
 }
 .results-view__btn-section-btn {
   border: none;
-  background: orange;
-  font-size: 1em;
   padding: .25em 1em;
-  cursor: pointer;
-  outline: none;
   width: 100px;
+  height: 35px;
 }
-.results-view__details-elem {
-  display: inline-block;
+
+@media screen and (max-width: 1700px) {
+  .results-view__section {
+    height: 800px;
+    width: 90%;
+    max-width: 800px;
+    margin: auto auto 2rem auto;
+    display: grid;
+    grid-template-rows: 10fr 2fr 1fr;
+  }
+  .results-view__img {
+    width: 90%;
+    height: auto;
+    margin: 1rem auto;
+    max-width: 400px;
+    align-self: center;
+  }
+  .results-view__details {
+    text-align: center;
+  }
+  .details-elem__price, .details-elem__rating {
+    display: block;
+    align-self: end;
+  }
+  .results-view__btn-section {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }    
 }
-.results-view__details-elem--block {
-  display: block;
+
+@media screen and (min-width: 1701px) {
+  .results-view__section {
+    width: 60%;
+    margin: auto auto 2rem auto;
+    display: grid;
+    grid-template-areas:
+      "img details"
+      "btn-section btn-section"
+    ;
+  }
+  .results-view__img {
+    border: 2px solid black;
+    height: 450px;
+    width: 450px;
+    margin: 1rem;
+    box-shadow: 0px 0px 15px 5px darkgrey;
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
+  }
+  .results-view__details {
+    border-left: 2px solid black;
+    padding: 2rem;
+    grid-area: details;
+    height: 450px;
+    width: 450px;
+    display: grid;
+    grid-template-areas:
+      "head head"
+      "price rating"
+      "phone phone"
+      "address address"
+    ;
+  }
+  .details-elem__header {
+    grid-area: head;
+  }
+  .details-elem__price {
+    grid-area: price;
+  }
+  .details-elem__rating {
+    grid-area: rating;
+    justify-self: right;
+  }
+  .details-elem__display-phone {
+    grid-area: phone;
+  }
+  .details-elem__address {
+    grid-area: address;
+  }
+  .results-view__address-elem {
+    display: block;
+  }
+  .results-view__btn-section {
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    grid-area: btn-section;
+  }
+  .results-view__details-elem {
+    display: inline-block;
+  }
+  .results-view__details-elem--block {
+    display: block;
+  }
 }
 
 /* ============================================================== 
