@@ -70,7 +70,6 @@ define('Initialize',
     const Router = Backbone.Router.extend({
 
       initialize: function() {
-        console.log('router');
         this.AppData = {
           eventBus: _.extend({}, Backbone.Events),
           router: this,
@@ -91,14 +90,12 @@ define('Initialize',
       },
 
       default: function() {
-        console.log('default');
         let view = new QuestionsView({ AppData: this.AppData })
         appViewManager.newAppView(view)
         view.initializeChildModelsAndViews()
       },
   
       questionsView: function() {
-        console.log('test3, questions');
         let view = new QuestionsView({ AppData: this.AppData })
         appViewManager.newAppView(view)
         view.initializeChildModelsAndViews()

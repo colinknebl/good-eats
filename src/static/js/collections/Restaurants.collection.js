@@ -14,7 +14,8 @@ define('RestaurantsCollectionColl', [
 
     model: RestaurantModel,
 
-    url: 'http://localhost:8080/api/get_restaurant_collection/',
+    // url: 'http://localhost:8080/api/get_restaurant_collection/',
+    url: 'http://52.15.140.21:8080/api/get_restaurant_collection/',
 
     yelpQueryUrl: '',
 

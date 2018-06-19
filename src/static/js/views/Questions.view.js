@@ -37,7 +37,6 @@ define('QuestionsView', [
 
 
     initialize: function(options) {
-      console.log('questions view initialized');
       this.AppData = options.AppData
       
       // Clear out any existing cached collection
@@ -49,7 +48,6 @@ define('QuestionsView', [
     },
 
     initializeChildModelsAndViews: function() {
-      console.log('questions view children initialized');
       let submitButtonModel = new SubmitButtonModel()
       let submitButtonView = new SubmitButtonView({ 
         el: '.questions-li__submit-btn', 

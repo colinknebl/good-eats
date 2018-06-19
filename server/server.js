@@ -48,6 +48,10 @@ app.get('/api/get_restaurant_collection/', (req, res) => {
     })
 })
 
+app.get('/api/test', (req, res) => {
+  res.send('API test successful')
+})
+
 app.get('*', (req, res) => {
   res.redirect('/')
 })
