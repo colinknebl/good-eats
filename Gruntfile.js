@@ -23,7 +23,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-processhtml')
 
   // Registered Tasks
-  grunt.registerTask('build', ['concat', 'babel', 'sass:build', 'connect', 'watch'])
+  grunt.registerTask('build-watch', ['concat', 'babel', 'sass:build', 'connect', 'watch'])
+  grunt.registerTask('build', ['concat', 'babel', 'sass:build'])
   // grunt.registerTask('dist', ['concat:dist', 'processhtml:dist', 'sass:dist'])
   grunt.registerTask('dist', ['processhtml:dist', 'copy:dist', 'concat:dist', 'babel:dist', 'sass:dist'])
 
