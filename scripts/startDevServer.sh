@@ -1,4 +1,4 @@
-#! /usr/local/bin/bash
+#! /bin/bash
 
 PORT=8080 \
 ENV=DEV \
