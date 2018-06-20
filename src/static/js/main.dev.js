@@ -3,6 +3,7 @@ requirejs.config({
   baseUrl: 'static/js',
 
   paths: {
+    tpl: 'lib/tpl',
     jquery: 'lib/jquery',
     underscore: 'lib/underscore',
     backbone: 'lib/backbone',
@@ -22,7 +23,6 @@ requirejs.config({
     QuestionsView: 'custom/scripts',
     ResultsView: 'custom/scripts',
     DetailsView: 'custom/scripts',
-    RestaurantDetailsView: 'custom/scripts',
     RestaurantModelView: 'custom/scripts',
     RestaurantsCollectionView: 'custom/scripts',
     ResultsRestaurantView: 'custom/scripts',

@@ -13,7 +13,7 @@ define('NoteView', [
     initialize: function(options) {
       this.AppData = options.AppData
 
-      this.model.on('change', this.render, this)
+      this.listenTo(this.model, 'change', this.render)
 
       if (!this.AppData.state.get('hasCoords')) {
         this.model.set('hide', false)

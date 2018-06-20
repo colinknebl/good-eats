@@ -19,7 +19,7 @@ module.exports = {
     tasks: ['babel:build_app'],
   },
   js_main: {
-    files: ['src/static/js/main.js'],
+    files: ['src/static/js/main.dev.js'],
     tasks: ['babel:build_main'],
   },
   js_router: {
@@ -36,4 +36,8 @@ module.exports = {
     files: ['.misc/main.scss'],
     tasks: ['sass:build'],
   },
+  templates: {
+    files: ['src/static/js/views/templates/*'],
+    tasks: ['copy:templates'],
+  }
 }

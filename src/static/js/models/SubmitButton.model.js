@@ -15,7 +15,7 @@ define('SubmitButtonModel', [
     },
 
     initialize: function() {
-      this.AppData.eventBus.on('locationResolved', this.setEnableBtn, this)
+      this.listenTo(this.AppData.eventBus, 'locationResolved', this.setEnableBtn)
     },
 
     setEnableBtn: function() {

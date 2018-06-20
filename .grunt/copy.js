@@ -32,5 +32,15 @@ module.exports = {
         dest: 'dist/'
       }
     ]
+  },
+  templates: {
+    files: [
+      {
+        expand: true,
+        cwd: 'src/static/js/views/templates/',
+        src: ['*'],
+        dest: 'build/static/js/templates/'
+      }
+    ]
   }
 }

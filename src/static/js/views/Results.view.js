@@ -4,12 +4,14 @@ define('ResultsView', [
   /* 3 */ 'backbone',
   /* 4 */ 'mustache',
   /* 5 */ 'ResultsRestaurantView',
+  /* 6 */ 'tpl!./templates/results_view.tpl.html',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
   /* 3 */ Backbone,
   /* 4 */ Mustache,
   /* 5 */ ResultsRestaurantView,
+  /* 6 */ ResultsViewHtmlTemplate,
 ){
 
   const ResultsView = Backbone.View.extend({
@@ -41,7 +43,7 @@ define('ResultsView', [
     },
 
     render: function() {
-      this.$el.html(this.html)
+      this.$el.html(ResultsViewHtmlTemplate())
 
       return this
     },
@@ -67,28 +69,6 @@ define('ResultsView', [
       
       this.AppData.router.navigate('/restaurant/' + nextModel.get('id'), { trigger: true })
     },
-
-    html: `
-      <img class="results-view__img" src="" alt="image url">
-      <div class="results-view__details"></div>
-      <script id="results-view__template" type="text/html">
-        <span class="results-view__details-elem details-elem__header"><h2>{{ name }}</h2></span>
-        <span class="results-view__details-elem details-elem__price">Price: {{ price }}</span>
-        <span class="results-view__details-elem details-elem__rating">Rating: {{ rating }}</span>
-        <span class="results-view__details-elem results-view__details-elem--block details-elem__display-phone">{{ display_phone }}</span>
-        <span class="results-view__details-elem results-view__details-elem--block details-elem__address">
-          <address>
-            <span class="results-view__address-elem">{{ location.address1 }}</span>
-            <span class="results-view__address-elem">{{ location.address2 }}</span>
-            <span class="results-view__address-elem">{{ location.city }}, {{ location.state }} {{ location.zip_code }}</span>
-          </address>
-        </span>
-      </script>
-      <div class="results-view__btn-section">
-        <button id="prev-btn" class="btn-general results-view__btn-section-btn">Previous</button>
-        <button id="next-btn" class="btn-general results-view__btn-section-btn">Next</button>
-      </div>
-    `,
   })
 
   return ResultsView

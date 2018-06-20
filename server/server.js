@@ -34,7 +34,14 @@ app.get('/api/get_restaurant_collection/', (req, res) => {
     }
     return fetch(url, options)
       .then(resp => resp.json())
-      .catch(err => console.error('error', err))
+      .catch(err => {
+        let errors = JSON.parse(fs.readFileSync('errors.json'));
+        let error = new Error(err)
+        errors.log.push(error)
+        errors = JSON.stringify(errors, null, 2)
+        fs.writeFileSync('errors.json', errors)
+        console.log(`New error logged at ${error.date}`);
+      })
   }
   request()
     .then(data => {

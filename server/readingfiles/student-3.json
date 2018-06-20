@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "name": "Sara",
+      "age": 23,
+      "gender": "Female",
+      "department": "History",
+      "car": "Honda"
+    },
+    {
+      "name": "Mike",
+      "age": 23,
+      "gender": "Male",
+      "department": "English",
+      "car": "Honda"
+    },
+    {
+      "name": "Colin",
+      "age": 26,
+      "gender": "Male",
+      "department": "Software Development",
+      "car": "Honda"
+    },
+    {
+      "name": "Jessica",
+      "age": 28,
+      "gender": "Female",
+      "department": "Child Wrangler",
+      "car": "Mazda"
+    }
+  ]
+}

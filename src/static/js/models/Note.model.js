@@ -16,9 +16,9 @@ define('NoteModel', [
     },
 
     initialize: function() {
-      this.AppData.eventBus.on('locationResolved', this.locationResolved, this)
-      this.AppData.eventBus.on('formSubmitted', this.formSubmitted, this)
-      this.AppData.eventBus.on('noResults', this.noResults, this)
+      this.listenTo(this.AppData.eventBus, 'locationResolved', this.locationResolved)
+      this.listenTo(this.AppData.eventBus, 'formSubmitted', this.formSubmitted)
+      this.listenTo(this.AppData.eventBus, 'noResults', this.noResults)
     },
 
     locationResolved: function() {

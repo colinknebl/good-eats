@@ -8,6 +8,7 @@ module.exports = {
       'build/static/js/lib/jquery.js':        ['src/static/js/lib/jquery.js'],
       'build/static/js/lib/underscore.js':    ['src/static/js/lib/underscore.js'],
       'build/static/js/lib/mustache.js':      ['src/static/js/lib/mustache.js'],
+      'build/static/js/lib/tpl.js':           ['src/static/js/lib/tpl.js'],
     }
   },
   build_html: {

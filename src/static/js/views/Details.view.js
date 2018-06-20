@@ -6,6 +6,7 @@ define('DetailsView', [
   /* 5 */ 'MapView',
   /* 6 */ 'RestaurantsCollectionColl',
   /* 7 */ 'RestaurantModel',
+  /* 8 */ 'tpl!./templates/details_view.tpl.html',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
@@ -14,6 +15,7 @@ define('DetailsView', [
   /* 5 */ MapView,
   /* 6 */ RestaurantsCollection,
   /* 7 */ RestaurantModel,
+  /* 8 */ DetailsViewHtmlTemplate,
 ){
 
   const DetailsView = Backbone.View.extend({
@@ -24,9 +26,6 @@ define('DetailsView', [
 
     initialize: function(options) {
       this.AppData = options.AppData
-      // this.render()
-
-      this.AppData.eventBus.on('test', this.test, this)
     },
 
     initializeChildModelsAndViews: function() {
@@ -44,43 +43,11 @@ define('DetailsView', [
       this.AppData.appViewManager.newSubView(restaurantsCollectionView)
     },
 
-    test: function() {
-      console.log('event bus triggered');
-      this.displayCollection()
-    },
-
     render: function() {
-      this.$el.html(`
-        <div id="details-view__map" class="details-view__map"></div>
-        <ul id="details-view__ul" class="details-view__ul"></ul>
-        <script id="details-view__template" type="text/html">
-          <h4>{{ name }}</h4>
-          <span class="restaurant-details__elem">Price: {{ price }}</span>
-          <span class="restaurant-details__elem">Rating: {{ rating }}</span>
-          <span class="restaurant-details__elem">Address: {{ location.address1 }}</span>
-          <button class="btn-general restaurant-details__btn">More Info</button>
-        </script>
-      `)
-      
-      // this.AppData.eventBus.trigger('test')
-
-      
-      // if (!this.AppData.state.collection) {
-      //   this.fetchAndDisplay()
-      // }
-      // else {
-      //   this.displayCollection()
-      // }
+      this.$el.html(DetailsViewHtmlTemplate())
 
       return this
     },
-
-    displayCollection: function() {
-      // let mapView = new MapView({ AppData: this.AppData })
-      // let restaurantsCollectionView = new RestaurantsCollectionView({ collection: this.AppData.state.collection, AppData: this.AppData })
-      // $('#details-view__section').append(restaurantsCollectionView.render().$el)
-    },
-
 
     fetchAndDisplay: function() {
 
@@ -114,7 +81,6 @@ define('DetailsView', [
         .then(dataCollection => {
           // Cache the collection into app state
           this.AppData.state.collection = dataCollection
-          this.displayCollection()
         })
       .catch(err => console.error(err))
     }

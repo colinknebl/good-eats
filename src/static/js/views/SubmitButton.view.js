@@ -13,7 +13,7 @@ define('SubmitButtonView', [
     initialize: function(options) {
       this.AppData = options.AppData
       
-      this.model.on('change', this.render, this)
+      this.listenTo(this.model, 'change', this.render)
 
       // Check to see if any coordinates have been cached, if coordinated have been cached, enable submit button
       if (this.AppData.state.get('hasCoords')) {

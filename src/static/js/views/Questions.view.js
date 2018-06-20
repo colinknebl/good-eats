@@ -11,6 +11,7 @@ define('QuestionsView', [
   /* 10 */ 'AnimationModel',
   /* 11 */ 'NoteModel',
   /* 12 */ 'NoteView',
+  /* 13 */ 'tpl!./templates/questions_view.tpl.html',
 ], function(
   /* 1 */ $, 
   /* 2 */ _, 
@@ -24,6 +25,7 @@ define('QuestionsView', [
   /* 10 */ AnimationModel,
   /* 11 */ NoteModel,
   /* 12 */ NoteView,
+  /* 13 */ QuestionViewHtmlTemplate,
 ){
 
   const QuestionsView = Backbone.View.extend({
@@ -74,7 +76,7 @@ define('QuestionsView', [
     },
 
     render: function() {
-      this.$el.html(this.html)
+      this.$el.html(QuestionViewHtmlTemplate())
 
       return this
     },
@@ -184,48 +186,6 @@ define('QuestionsView', [
 
       return url
     },
-
-    html: `
-      <form class="questions-form">
-        <ul class="questions-list">
-          <li class="questions-li">
-            <span class="questions-li__span">What are you in the mood for?</span>
-            <select id="questions-form__term" class="questions-li__input" name="term">
-              <option value="american">American</option>
-              <option value="breweries">Breweries</option>
-              <option value="casual">Casual</option>
-              <option value="chinese">Chinese</option>
-              <option value="italian">Italian</option>
-              <option value="mediterranean">Mediterranean</option>                
-              <option value="polish">Polish</option>
-            </select>
-          </li>
-          <li class="questions-li">
-            <span class="questions-li__span">How far are you willing to travel?</span>
-            <input id="questions-form__radius" class="questions-li__input" type="number" step="1" min="1" max="25" placeholder="Max 25 miles">
-          </li>
-          <li class="questions-li">
-            <span class="questions-li__span">What is your budget?</span>
-            <select id="questions-form__price" class="questions-li__input" name="price">
-              <option value="1">$</option>
-              <option value="2">$$</option>
-              <option value="3">$$$</option>
-              <option value="4">$$$$</option>
-              <option value="any">Who cares, I'm rich</option>
-            </select>
-          </li>
-          <li class="questions-li">
-            <span class="questions-li__span">What is the minimum rating desired?</span>
-            <input id="questions-form__min-rating" class="questions-li__input" type="number" step="0.5" min="1" max="5" placeholder="1 - 5 (e.x. 4.5)">
-          </li>
-        </ul>
-        <div class="questions-li__submit-btn-container">
-          <input class="btn-general questions-li__submit-btn" type="submit" value="Find Me Food!" disabled="true">
-        </div>
-        <div class="questions-view__animation-container"></div>
-        <div class="questions-view__notes-container"></div>
-      </form>
-    `,
   })
 
   return QuestionsView

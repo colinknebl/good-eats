@@ -15,9 +15,9 @@ define('AnimationModel', [
     },
 
     initialize: function() {
-      this.AppData.eventBus.on('locationResolved', this.locationResolved, this)
-      this.AppData.eventBus.on('noResults', this.noResults, this)
-      this.AppData.eventBus.on('formSubmitted', this.showAnimation, this)
+      this.listenTo(this.AppData.eventBus, 'locationResolved', this.locationResolved)
+      this.listenTo(this.AppData.eventBus, 'noResults', this.noResults)
+      this.listenTo(this.AppData.eventBus, 'formSubmitted', this.showAnimation)
     },
 
     showAnimation: function() {
