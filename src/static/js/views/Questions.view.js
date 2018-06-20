@@ -6,10 +6,7 @@ define('QuestionsView', [
   /* 5 */ 'RestaurantsCollectionColl',
   /* 6 */ 'RestaurantModel',
   /* 7 */ 'SubmitButtonView',
-  /* 8 */ 'SubmitButtonModel',
   /* 9 */ 'AnimationView',
-  /* 10 */ 'AnimationModel',
-  /* 11 */ 'NoteModel',
   /* 12 */ 'NoteView',
   /* 13 */ 'tpl!./templates/questions_view.tpl.html',
 ], function(
@@ -20,10 +17,7 @@ define('QuestionsView', [
   /* 5 */ RestaurantsCollection,
   /* 6 */ RestaurantModel,
   /* 7 */ SubmitButtonView,
-  /* 8 */ SubmitButtonModel,
   /* 9 */ AnimationView,
-  /* 10 */ AnimationModel,
-  /* 11 */ NoteModel,
   /* 12 */ NoteView,
   /* 13 */ QuestionViewHtmlTemplate,
 ){
@@ -50,27 +44,21 @@ define('QuestionsView', [
     },
 
     initializeChildModelsAndViews: function() {
-      let submitButtonModel = new SubmitButtonModel()
       let submitButtonView = new SubmitButtonView({ 
         el: '.questions-li__submit-btn', 
         AppData: this.AppData,
-        model: submitButtonModel
       })
       this.AppData.appViewManager.newSubView(submitButtonView)
 
-      let animationModel = new AnimationModel()
       let animationView = new AnimationView({ 
         el: '.questions-view__animation-container', 
         AppData: this.AppData,
-        model: animationModel
       })
       this.AppData.appViewManager.newSubView(animationView)
 
-      let noteModel = new NoteModel()
       let noteView = new NoteView({
         el: '.questions-view__notes-container',
         AppData: this.AppData,
-        model: noteModel
       })
       this.AppData.appViewManager.newSubView(noteView)
     },
