@@ -45,7 +45,6 @@ app.get('/api/get_restaurant_collection/', (req, res) => {
   }
   request()
     .then(data => {
-      console.log('data :', data);
       if (typeof minRating === 'number') {
         let restaurants = data.businesses.filter(rest => rest.rating >= minRating)
         res.json(restaurants)
