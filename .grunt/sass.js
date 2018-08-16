@@ -2,7 +2,7 @@ module.exports = {
   build: {
     options: {
       style: 'expanded',
-      cacheLocation: '.tmp/.sass-cache',
+      // cacheLocation: '.tmp/.sass-cache',
     },
     files: {
       'build/static/css/compiled/main.css': '.tmp/main.scss',
@@ -11,7 +11,7 @@ module.exports = {
   dist: {
     options: {
       style: 'compressed',
-      cacheLocation: '.tmp/.sass-cache',
+      // cacheLocation: '.tmp/.sass-cache',
       sourcemap: 'none',
     },
     files: {

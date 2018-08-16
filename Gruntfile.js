@@ -27,7 +27,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'concat:build', 'concat:build_html', 'concat:build_scss', 'concat:build_js_custom', 
     'babel:build_custom', 'babel:build_main', 'babel:build_app', 
-    'sass:build'])
+    'sass:build', 'copy:templates',])
   // grunt.registerTask('dist', ['concat:dist', 'processhtml:dist', 'sass:dist'])
   grunt.registerTask('dist', ['processhtml:dist', 'copy:dist', 'concat:dist', 'babel:dist', 'sass:dist'])
 
